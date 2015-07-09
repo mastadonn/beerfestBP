@@ -2,6 +2,10 @@ Router.route('/', {
   name: 'home'
 });
 
+Router.route('/results', {
+  name: 'results'
+});
+
 Router.route('/dashboard', {
   name: 'dashboard',
   controller: 'DashboardController'
