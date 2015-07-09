@@ -5,5 +5,3 @@ Items.helpers({
 
 
 });
-
-Beers = new Mongo.Collection('beers');

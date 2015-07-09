@@ -1,12 +1,12 @@
 
 
 Template.dashboard.events({
-  "submit .new-beer": function (event) {
+  "submit .new-item": function (event) {
     // This function is called when the new task form is submitted
     var text = event.target.text.value;
 
-      Beers.insert({
-        text: text,
+      Items.insert({
+        name: text,
         createdAt: new Date() // current time
       });
 
