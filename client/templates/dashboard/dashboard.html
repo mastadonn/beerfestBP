@@ -6,13 +6,15 @@
 
     <form class="new-item">
        <input type="text" name="text" placeholder="Type to add new beer" />
+       <input type="string" name="string" placeholder="rating" />
+       <input type="textarea" name="textarea" placeholder="description" />
        <input class=btn type="submit" name="submit" />
      </form>
 
 
     <ul class="list-group">
       {{#each items}}
-        <li class="list-group-item">{{ name }} <span class="label label-default">{{ rating }}</span></li>
+        <li class="list-group-item">{{ name }} : {{ description }}  <span class="label label-default">{{ rating }} </span></li>
       {{/each}}
     </ul>
 
