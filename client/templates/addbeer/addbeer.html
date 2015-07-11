@@ -1,12 +1,21 @@
+<template name="beerlist">
+<ul class="list-group">
+  {{#each beers}}
+  <li class="list-group-item">{{ name }} : {{ description }}
+  <span class="label label-default">{{ rating }} </span>
+  </li>
+  {{/each}}
+</ul>
+</template>
 
 
-<template name="dashboard">
-  <div class="template-dashboard">
+<template name="addbeer">
+  <div class="template-addbeer">
     <div class="page-header">
       <h1>Add Beer</h1>
     </div>
 
-    <form class="new-item">
+    <form class="new-beer">
        <input type="text" name="text" placeholder="Type to add new beer" />
        <input type="string" name="string" placeholder="rating" />
        <input type="textarea" name="textarea" placeholder="description" />
