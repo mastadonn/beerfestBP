@@ -32,3 +32,10 @@ Template.beerlist.helpers({
 return Beers.find({}) ;
 }
 });
+
+Template.removebutton.helpers({
+    // check if user is an admin
+    isAdminUser: function() {
+        return Roles.userIsInRole(Meteor.user(), ['admin']);
+    }
+});
