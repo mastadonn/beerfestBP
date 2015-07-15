@@ -1,6 +1,6 @@
 ResultsController = AppController.extend({
   data: {
-    items: Items.find({})
+    beers: Beers.find({})
   },
   onAfterAction: function () {
     Meta.setTitle('Results');

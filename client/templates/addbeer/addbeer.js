@@ -4,7 +4,6 @@ Template.addbeer.events({
   "submit .new-beer": function (event) {
     // This function is called when the new task form is submitted
     var name = event.target.text.value;
-    var rating = event.target.string.value;
     var description = event.target.textarea.value;
 
 
@@ -12,7 +11,6 @@ Template.addbeer.events({
 
       // Clear form
       event.target.text.value = "";
-      event.target.number.value = "";
       event.target.textarea.value = "";
 
       // Prevent default form submit
