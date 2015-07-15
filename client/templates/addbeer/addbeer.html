@@ -1,13 +1,22 @@
 <template name="beerlist">
+  <h2>All the brews</h2>
+
 <ul class="list-group">
   {{#each beers}}
   <li class="list-group-item">{{ name }} : {{ description }}
   <span class="label label-default">{{ rating }} </span>
+  {{> removebutton}}
   </li>
   {{/each}}
 </ul>
 </template>
 
+
+<template name="removebutton">
+  {{#if currentUser}}
+<span><button class="delete btn btn-danger">Remove</button></span>
+  {{/if}}
+</template>
 
 <template name="addbeer">
   <div class="template-addbeer">
@@ -22,7 +31,7 @@
        <input class=btn-lg type="submit" name="submit" />
      </form>
 
-{{> beerlist}}
 
+{{> beerlist}}
   </div>
 </template>
