@@ -1,5 +1,4 @@
 <template name="beerlist">
-  <h2>All the brews</h2>
 
 <ul class="list-group">
   {{#each beers}}
@@ -21,13 +20,16 @@
 <template name="addbeer">
   <div class="template-addbeer">
     <div class="page-header">
-      <h1>Add Beer</h1>
+      <h2>Add a Beer</h2>
     </div>
 
     <form class="new-beer">
-       <input type="text" name="text" placeholder="Type to add new beer" />
-       <input type="textarea" name="textarea" placeholder="description" />
-       <input class=btn-lg type="submit" name="submit" />
+      <div class="form-group">
+       <input class=form-control type="text" name="text" placeholder="Type to add new beer" />
+       <input class=form-control type="textarea" name="textarea" placeholder="description" />
+       <input class="btn btn-info btn-block" type="file" id="inputFile" value="Add Photo"/>
+       <input class="btn btn-success btn-block" type="submit" name="submit" value="Add Beer"/>
+       </div>
      </form>
 
 
