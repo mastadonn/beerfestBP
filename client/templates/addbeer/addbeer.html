@@ -11,12 +11,12 @@
 </ul>
 </template>
 
-
 <template name="removebutton">
   {{#if isAdminUser}}
 <span><button class="delete btn btn-danger">Remove</button></span>
   {{/if}}
 </template>
+
 
 <template name="addbeer">
   <div class="template-addbeer">
@@ -26,7 +26,6 @@
 
     <form class="new-beer">
        <input type="text" name="text" placeholder="Type to add new beer" />
-       <input type="string" name="string" placeholder="rating" />
        <input type="textarea" name="textarea" placeholder="description" />
        <input class=btn-lg type="submit" name="submit" />
      </form>
