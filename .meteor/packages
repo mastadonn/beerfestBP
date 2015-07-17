@@ -26,3 +26,9 @@ houston:admin
 barbatus:stars-rating
 underscore
 mrt:accounts-admin-ui-bootstrap-3
+cfs:standard-packages
+cfs:gridfs
+cfs:filesystem
+cfs:autoform
+tomi:upload-jquery
+tomi:upload-server

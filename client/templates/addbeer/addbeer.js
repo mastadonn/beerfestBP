@@ -37,3 +37,22 @@ Template.removebutton.helpers({
         return Roles.userIsInRole(Meteor.user(), ['admin']);
     }
 });
+
+Template.imageUpload.helpers({
+  specificFormData: function() {
+    return {
+      id: this._id,
+      other: this.other,
+      hard: 'Lolcats'
+    }
+  }
+});
+
+Template.imageUpload.helpers({
+  myCallbacks: function() {
+    return {
+        finished: function(index, fileInfo, context) {  },
+
+    }
+  }
+});
