@@ -3,11 +3,17 @@ Meteor.subscribe("beers");
 Template.addbeer.events({
   "submit .new-beer": function (event) {
     // This function is called when the new task form is submitted
-    var name = event.target.text.value;
-    var description = event.target.textarea.value;
+    var name = event.target.text.value,
+      description = event.target.textarea.value,
+      beerImage = ({image: file.name});
 
+    function function_name(argument) {
+      // body...
+    }
 
-    Meteor.call("addBeer", name, description);
+    console.log(beerImage);
+
+    Meteor.call("addBeer", name, description, beerImage);
 
       // Clear form
       event.target.text.value = "";
@@ -38,21 +44,13 @@ Template.removebutton.helpers({
     }
 });
 
-Template.imageUpload.helpers({
-  specificFormData: function() {
-    return {
-      id: this._id,
-      other: this.other,
-      hard: 'Lolcats'
-    }
-  }
-});
-
-Template.imageUpload.helpers({
+Template.home.helpers({
   myCallbacks: function() {
     return {
-        finished: function(index, fileInfo, context) {  },
-
+        finished: function (index, file) {
+        var beerImage = ({image: file.name});
+        log
     }
+  };
   }
 });
