@@ -35,6 +35,7 @@ Template.addbeer.events({
 
         MeteorCamera.getPicture(cameraOptions, function (error, data) {
           Session.set("photo", data);
+          console.log("photo");
         });
       }
     });
