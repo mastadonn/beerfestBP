@@ -5,11 +5,12 @@ Template.addbeer.events({
     // This function is called when the new task form is submitted
     var name = event.target.text.value,
       description = event.target.textarea.value,
-      beerImage = 'beer.jpg';//({image: file.name});
+      beerimage = Session.get("photo");
+
 
     //console.log(beerImage);
 
-    Meteor.call("addBeer", name, description, beerImage);
+    Meteor.call("addBeer", name, description, beerimage);
 
       // Clear form
       event.target.text.value = "";
@@ -35,7 +36,6 @@ Template.addbeer.events({
 
         MeteorCamera.getPicture(cameraOptions, function (error, data) {
           Session.set("photo", data);
-          console.log("photo");
         });
       }
     });

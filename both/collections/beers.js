@@ -14,7 +14,7 @@ BeersSchema = new SimpleSchema({
     label: "Description"
   },
   image: {
-    type: Object,
+    type: String,
     label: "Image"
   }
 });
