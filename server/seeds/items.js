@@ -1,14 +1,24 @@
 Meteor.startup(function() {
 
-  Factory.define('item', Items, {
-    name: function() { return Fake.sentence(); },
-    rating: function() { return _.random(1, 5); }
+  Factory.define('ratings', Ratings, {
+    beer: function() {
+      return Fake.sentence();
+    },
+    user: function() {
+      return Fake.sentence();
+    },
+    tasteRating: function() {
+      return _.random(1, 5);
+    },
+    packagingRating: function() {
+      return _.random(1, 5);
+    }
   });
 
-  if (Items.find({}).count() === 0) {
+  if (Ratings.find({}).count() === 0) {
 
     _(10).times(function(n) {
-      Factory.create('item');
+      Factory.create('ratings');
     });
 
   }
