@@ -1,50 +1,46 @@
-<!-- <template name="beerlist_old">
-
-  <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
-  </div>
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>
-
+<template name="addbeerlist">
 <ul class="list-group">
   {{#each beers}}
+  <div>
   <li class="list-group-item">{{ name }} : {{ description }}
-  <span class="label label-default">{{ rating }} </span>
   {{> removebutton}}
   </li>
+  </div>
   {{/each}}
 </ul>
 </template>
 
+
 <template name="removebutton">
   {{#if isAdminUser}}
-<span><button class="delete btn btn-danger">Remove</button></span>
+<button class="delete btn btn-danger pull-right">Remove</button>
   {{/if}}
 </template>
 
 
 <template name="addbeer">
-  <div class="template-addbeer">
-    <div class="page-header">
-      <h2>Add a Beer</h2>
-    </div>
-
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading text-center panel-title h3 strong">Add a Beer</div>
+  <div class="panel-body">
     <form class="new-beer">
-      <div class="form-group">
-       <input class=form-control type="text" name="text" placeholder="Type to add new beer" />
+      <div class="panel panel-primary">
+       <input class=form-control type="text" name="text" placeholder="Beer name" />
        <input class=form-control type="textarea" name="textarea" placeholder="description" />
+       <input class="takephoto btn btn-primary btn-block" type="submit" value="Take Photo"/>
+        {{#if photo}}
+          <div class="text-center">
+            <img src={{photo}} class="img-responsive beerimg"/>
+          </div>
+        {{/if}}
        <input class="btn btn-success btn-block" type="submit" name="submit" value="Add Beer"/>
        </div>
      </form>
-{{> imageUpload}}
-
-
   </div>
-</template>
 
-<template name="imageUpload">
-    {{> upload_bootstrap fileTypes='.jpg' callbacks=myCallbacks formData=specificFormData}}
-</template> -->
+  <!-- List group -->
+  <ul class="list-group">
+    {{> addbeerlist}}
+  </ul>
+</div>
+</template>

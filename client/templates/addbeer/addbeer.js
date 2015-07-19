@@ -20,14 +20,34 @@ Template.addbeer.events({
 }
 });
 
-Template.beerlist.events({
+    Template.addbeer.helpers({
+        photo: function () {
+          return Session.get("photo");
+        }
+      });
+
+    Template.addbeer.events({
+      "click .takephoto": function () {
+        var cameraOptions = {
+          width: 400,
+          height: 300
+        };
+
+        MeteorCamera.getPicture(cameraOptions, function (error, data) {
+          Session.set("photo", data);
+        });
+      }
+    });
+
+
+Template.addbeerlist.events({
   'click .delete': function() {
     Meteor.call("deleteBeer", this._id);
   },
 
 });
 
-Template.beerlist.helpers({
+Template.addbeerlist.helpers({
   beers: function() {
     return Beers.find({});
 }
@@ -38,13 +58,4 @@ Template.removebutton.helpers({
     isAdminUser: function() {
         return Roles.userIsInRole(Meteor.user(), ['admin']);
     }
-});
-
-Template.home.helpers({
-  myCallbacks: function() {
-    return {
-        finished: function (index, file) {
-    }
-  };
-  }
 });
