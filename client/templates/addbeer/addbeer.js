@@ -5,13 +5,9 @@ Template.addbeer.events({
     // This function is called when the new task form is submitted
     var name = event.target.text.value,
       description = event.target.textarea.value,
-      beerImage = ({image: file.name});
+      beerImage = 'beer.jpg';//({image: file.name});
 
-    function function_name(argument) {
-      // body...
-    }
-
-    console.log(beerImage);
+    //console.log(beerImage);
 
     Meteor.call("addBeer", name, description, beerImage);
 
@@ -33,7 +29,7 @@ Template.beerlist.events({
 
 Template.beerlist.helpers({
   beers: function() {
-return Beers.find({}) ;
+    return Beers.find({});
 }
 });
 
@@ -48,8 +44,6 @@ Template.home.helpers({
   myCallbacks: function() {
     return {
         finished: function (index, file) {
-        var beerImage = ({image: file.name});
-        log
     }
   };
   }
