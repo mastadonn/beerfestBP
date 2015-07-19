@@ -1,0 +1,16 @@
+<template name="beerList">
+  {{#each beers}}
+  <div class="media">
+    <div class="media-left">
+      <img class="media-object" src="{{image}}" alt="{{name}}">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{ name }}</h4>
+      {{description}}
+    </div>
+    <div class="media-right">
+      Test
+    </div>
+  </div>
+  {{/each}}
+</template>
