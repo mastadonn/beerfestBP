@@ -1,11 +1,20 @@
 <template name="addbeerlist">
-<ul class="list-group">
-  {{#each beers}}
-  <div>
-  <li class="list-group-item"><img src={{image}} class="addthumb" /> {{ name }} : {{ description }}
-  {{> removebutton}}
-  </li>
+  <ul class="list-group">
+    {{#each beers}}
+    <li class="list-group-item">
+  <div class="media">
+  <div class="media-left">
+      <img class="media-object addthumb" src={{image}} alt={{ name }}/>
   </div>
+  <div class="media-body">
+    {{> removebutton}}
+    <h4 class="media-heading">{{ name }}</h4>
+    {{ description }}
+
+  </div>
+</div>
+
+  </li>
   {{/each}}
 </ul>
 </template>
