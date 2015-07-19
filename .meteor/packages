@@ -32,3 +32,4 @@ cfs:filesystem
 cfs:autoform
 tomi:upload-jquery
 tomi:upload-server
+mdg:camera
