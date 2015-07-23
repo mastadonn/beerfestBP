@@ -1,0 +1,41 @@
+<template name="beerCardList">
+  {{#each beers}}
+  <div class="beercard panel panel-primary bootcards-media">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ name }}</h3>
+    </div>
+      <img src="{{image}}" alt="{{name}}" class="img-responsive"/>
+    <div class="panel-body">
+      {{description}}
+    </div>
+        <div class="panel-heading">
+          <h3 class="panel-title text-center">Average Ratings</h3>
+        </div>
+        <div class="panel-body">
+          <p class="col-xs-6">
+             <i class="fa fa-beer fa-2x"></i> Taste <span class="badge">14</span>
+           </p>
+
+        <p class="col-xs-6">
+          <i class="fa fa-eye fa-2x"></i> Packaging <span class="badge">14</span>
+        </p>
+        </div>
+        <div class="panel-heading text-center">
+          <h3 class="panel-title">Your Ratings</h3>
+        </div>
+        <div class="panel-body">
+        <p class="col-xs-6">
+           <i class="fa fa-beer fa-2x"></i> Taste <span class="badge">14</span>
+           {{> userRating}}
+        </p>
+        <p class="col-xs-6">
+          <i class="fa fa-eye fa-2x"></i> Packaging <span class="badge">14</span>
+
+        </p>
+        </div>
+
+</div>
+{{/each}}
+
+
+</template>

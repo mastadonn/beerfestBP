@@ -1,16 +1,18 @@
 <template name="beerList">
   {{#each beers}}
-  <div class="media">
-    <div class="media-left">
-      <img class="media-object" src="{{image}}" alt="{{name}}">
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">{{ name }}</h4>
+  <div class="card panel panel-default row container">
+      <div class="card-img col-xs-12 col-sm-12 col-md-5">
+      <img class="container-fluid media-object thumb350 img-circle" src="{{image}}" alt="{{name}}">
+      </div>
+      <div class="col-xs-6 cal-sm-3 col-md-4">
+        <h4 class="panel-heading">{{ name }}</h4>
       {{description}}
     </div>
-    <div class="media-right">
-      Test
+      <div class="col-xs-6 cal-sm-3 col-md-3">
+        {{> averageRating}}
+        {{> userRating}}
+      </div>
     </div>
-  </div>
+
   {{/each}}
 </template>

@@ -15,7 +15,7 @@ Template.addbeer.events({
       // Clear form
       event.target.text.value = "";
       event.target.textarea.value = "";
-
+      Session.set("photo", "");
       // Prevent default form submit
       return false;
 }
@@ -30,8 +30,8 @@ Template.addbeer.events({
     Template.addbeer.events({
       "click .takephoto": function () {
         var cameraOptions = {
-          width: 400,
-          height: 300
+          width: 640,
+          height: 480
         };
 
         MeteorCamera.getPicture(cameraOptions, function (error, data) {

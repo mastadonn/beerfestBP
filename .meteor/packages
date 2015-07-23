@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-less
 accounts-password
 useraccounts:bootstrap
 alanning:roles
@@ -23,7 +22,6 @@ yasinuslu:blaze-meta
 aldeed:collection2
 aldeed:autoform
 houston:admin
-barbatus:stars-rating
 underscore
 mrt:accounts-admin-ui-bootstrap-3
 cfs:standard-packages
@@ -33,3 +31,7 @@ cfs:autoform
 tomi:upload-jquery
 tomi:upload-server
 mdg:camera
+semantic:ui-rating
+less
+meteoric:ionic
+dandv:jquery-rateit
