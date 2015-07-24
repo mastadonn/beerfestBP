@@ -4,8 +4,10 @@ Template.rating.rendered = function () {
 
 Template.rating.events({
   'click #rateitTaste' : function (event, template) {
+    var beerId = this._id;
+    Session.set("selectedBeer", beerId);
     var userTaste = template.$('#rateitTaste').rateit('value'); // that's how you fetch the rating
-    console.log(userTaste);
+    console.log(userTaste,Session.get("selectedBeer"));
   }
 
 });

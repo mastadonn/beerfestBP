@@ -3,6 +3,7 @@
   <div class="beercard panel panel-primary bootcards-media">
     <div class="panel-heading">
       <h3 class="panel-title">{{ name }}</h3>
+      <h2 class="beer-title"><a href="{{#unless single}}{{pathFor route='beer.show' slug=slug}}{{else}}#{{/unless}}">{{title}}</a></h2>
     </div>
       <img src="{{image}}" alt="{{name}}" class="img-responsive"/>
     <div class="panel-body">
@@ -26,7 +27,7 @@
         <div class="panel-body">
         <p class="col-xs-6">
            <i class="fa fa-beer fa-2x"></i> Taste <span class="badge">14</span>
-           {{> userRating}}
+           {{> userRating }}
         </p>
         <p class="col-xs-6">
           <i class="fa fa-eye fa-2x"></i> Packaging <span class="badge">14</span>

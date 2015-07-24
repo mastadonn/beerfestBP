@@ -11,8 +11,3 @@ Meteor.methods({
     Beers.remove(id);
   }
 });
-
-Meteor.publish("beers", function(){
-  return Beers.find();
-
-});

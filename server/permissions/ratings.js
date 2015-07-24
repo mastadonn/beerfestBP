@@ -9,7 +9,3 @@ Ratings.allow({
     return userId;
   }
 });
-
-Meteor.publish("ratings", function () {
-  return Ratings.find({});
-});
