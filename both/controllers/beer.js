@@ -3,3 +3,14 @@ BeerController = AppController.extend({
     Beers: Beers.find()
   }
 });
+
+
+BeerShowController = RouteController.extend({
+  template: 'beer',
+  subscriptions: function(){
+    return Meteor.subscribe('beer', this.params._id);
+  },
+  data: function(){
+    return Posts.findOne({_id: this.params._id});
+  }
+});

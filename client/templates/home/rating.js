@@ -4,18 +4,22 @@ Template.rating.rendered = function () {
 
 Template.rating.events({
   'click #rateitTaste' : function (event, template) {
-    var beerId = this._id;
-    Session.set("selectedBeer", beerId);
+    var beername = this._id;
+//    Session.set("selectedBeer", beerId);
     var userTaste = template.$('#rateitTaste').rateit('value'); // that's how you fetch the rating
-    console.log(userTaste,Session.get("selectedBeer"));
+    console.log(userTaste,beername);
+    Meteor.call("addratingtaste" ,userTaste ,beername);
   }
 
 });
 
 Template.rating.events({
   'click #rateitPackaging' : function (event, template) {
+    var beername = this._id;
+//    Session.set("selectedBeer", beerId);
     var userPackaging = template.$('#rateitPackaging').rateit('value'); // that's how you fetch the rating
-     console.log(userPackaging);
+     console.log(userPackaging, beername);
+     Meteor.call("addratingpackaging" , userPackaging ,beername);
   }
  });
 

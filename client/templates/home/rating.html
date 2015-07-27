@@ -1,18 +1,19 @@
 <template name="userRating">
-  {{#if currentUser}}
     Rating: {{> rating}}
-  {{/if}}
 </template>
 
 <template name="rating">
-  <div class="rateit" id="rateitTaste" step="1" min="0" max="5" data-rateit-resetable="false" >
-</div>
-<div>
-    <span id="valueUserTaste"></span>
-</div>
-<div class="rateit" id="rateitPackaging" step="1" min="0" max="5" data-rateit-resetable="false" >
-</div>
-<div>
+  <div class="panel-body">
+    <h2><i class="fa fa-beer"></i> <stong>Taste</stong></h2><span class="badge">{{tasteCurrentRating}}</span>
+     <div class="rateit" id="rateitTaste" step="1" min="0" max="5" data-rateit-resetable="false" >
+   </div>
+   <div>
+       <span id="valueUserTaste"></span>
+   </div>
+    <h2><i class="fa fa-eye"></i> <stong>Packaging</stong></h2>
+    <span class="badge">{{packagingCurrentRating}}</span>
+<span class="rateit" id="rateitPackaging" step="1" min="0" max="5" data-rateit-resetable="false" >
+</span>
   <span id="valueUserPackaging"></span>
 </div>
 </template>
