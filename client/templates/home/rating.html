@@ -1,19 +1,13 @@
-<template name="userRating">
-    Rating: {{> rating}}
-</template>
-
 <template name="rating">
   <div class="panel-body">
     <h2><i class="fa fa-beer"></i> <stong>Taste</stong></h2><span class="badge">{{tasteCurrentRating}}</span>
-     <div class="rateit" id="rateitTaste" step="1" min="0" max="5" data-rateit-resetable="false" >
+     <div class="rateit" id="rateitTaste" min="0" max="5" value="0" data-rateit-step="1" data-rateit-resetable="false" data-class="bigstars" >
    </div>
-   <div>
-       <span id="valueUserTaste"></span>
-   </div>
+
     <h2><i class="fa fa-eye"></i> <stong>Packaging</stong></h2>
     <span class="badge">{{packagingCurrentRating}}</span>
-<span class="rateit" id="rateitPackaging" step="1" min="0" max="5" data-rateit-resetable="false" >
-</span>
-  <span id="valueUserPackaging"></span>
+<div class="rateit" id="rateitPackaging"  min="0" max="5" value="0" data-rateit-step="1" data-rateit-resetable="false" >
+</div>
+
 </div>
 </template>

@@ -9,7 +9,7 @@ RatingsSchema = new SimpleSchema({
     type: String,
     label: "Beer"
   },
-  user: {
+  userID: {
     type: String,
     label: "User"
   },

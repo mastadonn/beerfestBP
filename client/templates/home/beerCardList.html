@@ -12,21 +12,13 @@
         <div class="panel-heading">
           <h3 class="panel-title text-center">Average Ratings</h3>
         </div>
-        <div class="panel-body">
-          <p class="col-xs-6">
-             <i class="fa fa-beer fa-2x"></i> Taste <span class="badge">14</span>
-           </p>
-
-        <p class="col-xs-6">
-          <i class="fa fa-eye fa-2x"></i> Packaging <span class="badge">14</span>
-        </p>
-        </div>
+        {{> currentRatings}}
         <div class="panel-heading text-center">
           <h3 class="panel-title">Your Ratings</h3>
         </div>
         <div class="panel-body">
 
-           {{> userRating }}
+           {{> rating}}
 
         </div>
 

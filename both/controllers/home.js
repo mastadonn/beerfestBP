@@ -1,5 +1,6 @@
 HomeController = AppController.extend({
   data: {
-    Beers: Beers.find()
+    Beers: Beers.find(),
+    Ratings: Ratings.find()
   }
 });

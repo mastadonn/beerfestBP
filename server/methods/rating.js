@@ -1,18 +1,18 @@
 Meteor.methods({
-  addratingpackaging: function(userPackaging ,beername){
+  addratingpackaging: function(userPackaging ,beerId){
     Ratings.insert({
-        beer: beername,
-        user: this.userId,
+        beer: beerId,
+        userId: this.userId,
         packagingRating: userPackaging,
         createdAt: new Date()
     });
   },
 
-  addratingtaste: function(userTaste ,beername ){
+  addratingtaste: function(userTaste ,beerId ){
     Ratings.insert({
-        beer: beername,
-        user: this.userId,
-        packagingRating: userTaste,
+        beer: beerId,
+        userId: this.userId,
+        tasteRating: userTaste,
         createdAt: new Date()
     });
   },
