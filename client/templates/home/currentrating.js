@@ -1,29 +1,35 @@
 Meteor.subscribe("ratings");
 
 
-Template.currentRatings.events({
-  'click .currentRatings' : function() {
-    var packagingRatingTotal = Ratings.find({ beer: this._id ,packagingRating: {$gt: 0} },{fields: {packagingRating: 1 }} ).count();
-    tasteRatingTotal = Ratings.find({ beer: this._id ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).count();
 
-    tasteTotal = 0;
-    packagingTotal = 0;
+Template.currentRatings.helpers({
+    tasteRatingTotal: function() {
+      var tasteRatingTotal = Ratings.find({ beer: this._id ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).count();
+    return tasteRatingTotal;
+    },
+    currentTasteRating: function() {
+      var tasteTotal = 0,
+      tasteRatingTotal = Ratings.find({ beer: this._id ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).count();
 
-    Ratings.find({ beer: this._id ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).map(function(doc) {
-      tasteTotal += doc.tasteRating;
-    });
-    Ratings.find({ beer: this._id ,packagingRating: {$gt: 0} },{fields: {packagingRating: 1 }} ).map(function(doc) {
-      packagingTotal += doc.packagingRating;
-    });
-    
-    var tasteRatingAverage = tasteTotal / tasteRatingTotal ;
-    packagingRatingAverage = packagingTotal / packagingRatingTotal ;
-    tasteRatingDisplayAverage = tasteRatingAverage.toFixed(1);
-    packagingRatingDisplayAverage = packagingRatingAverage.toFixed(1);
+      Ratings.find({ beer: this._id ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).map(function(doc) {
+        tasteTotal += doc.tasteRating;  });
+      var tasteRatingAverage = tasteTotal / tasteRatingTotal ,
+      tasteRatingDisplayAverage = tasteRatingAverage.toFixed(1);
+      return tasteRatingDisplayAverage;
+    },
+    packagingRatingTotal: function() {
+      var packagingRatingTotal = Ratings.find({ beer: this._id ,packagingRating: {$gt: 0} },{fields: {packagingRating: 1 }} ).count();
+    return packagingRatingTotal;
+    },
+    currentPackagingRating: function() {
+      var packagingTotal = 0,
+      packagingRatingTotal = Ratings.find({ beer: this._id ,packagingRating: {$gt: 0} },{fields: {packagingRating: 1 }} ).count();
 
-
-    console.log("taste "+ tasteRatingDisplayAverage, "packaging "+ packagingRatingDisplayAverage );
-
+      Ratings.find({ beer: this._id ,packagingRating: {$gt: 0} },{fields: {packagingRating: 1 }} ).map(function(doc) {
+        packagingTotal += doc.packagingRating;  });
+      var packagingRatingAverage = packagingTotal / packagingRatingTotal ,
+      packagingRatingDisplayAverage = packagingRatingAverage.toFixed(1);
+      return packagingRatingDisplayAverage;
 }
 });
 
