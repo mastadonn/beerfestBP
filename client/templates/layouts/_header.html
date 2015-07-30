@@ -1,6 +1,6 @@
 <template name="_header">
 
-  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="container">
 
       <div class="navbar-header">
@@ -10,7 +10,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{pathFor 'home'}}">Beerfest 8</a>
+        <a class="navbar-brand beerfesttitle" href="{{pathFor 'home'}}">Beerfest 8</a>
       </div>
 
       <div class="collapse navbar-collapse" id="main-nav">
@@ -25,7 +25,7 @@
             {{/if}}
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-user"></i> {{ currentUser.profile.name }} <i class="fa fa-caret-down"></i>
+                <i class="fa fa-user"></i> User <i class="fa fa-caret-down"></i>
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#" data-action="logout"><i class="fa fa-lock"></i> Sign Out</a></li>

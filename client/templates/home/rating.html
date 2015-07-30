@@ -1,13 +1,31 @@
 <template name="rating">
-  <div class="panel-body">
-    <h2><i class="fa fa-beer"></i> <stong>Taste</stong></h2><span class="badge">{{tasteCurrentRating}}</span>
-     <div class="rateit" id="rateitTaste" min="0" max="5" value="0" data-rateit-step="1" data-rateit-resetable="false" data-class="bigstars" >
-   </div>
-
-    <h2><i class="fa fa-eye"></i> <stong>Packaging</stong></h2>
-    <span class="badge">{{packagingCurrentRating}}</span>
-<div class="rateit" id="rateitPackaging"  min="0" max="5" value="0" data-rateit-step="1" data-rateit-resetable="false" >
-</div>
-
+  <div class="currentRatings">
+        <table class="table table-bordered table-hover">
+        <tbody>
+        <tr>
+          <td>
+            <i class="fa fa-beer rateicon"></i>
+          </td>
+          <td>
+          Your Taste Score:
+          </td>
+          <td>
+            <div class="rateit " id="rateitTaste" min="0" max="5" value="0" data-rateit-step="1" data-rateit-resetable="false" data-class="bigstars" >
+             </div>                </td>
+          </tr>
+          <tr>
+          <td>
+            <i class="fa fa-eye rateicon"></i>
+          </td>
+          <td>
+            Your Packaging Score:
+          </td>
+          <td>
+            <div class="rateit" id="rateitPackaging"  min="0" max="5" value="0" data-rateit-step="1" data-rateit-resetable="false" >
+            </div>
+          </td>
+        </tr>
+        </tbody>
+        </table>
 </div>
 </template>

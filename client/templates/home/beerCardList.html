@@ -2,28 +2,19 @@
   {{#each beers}}
   <div class="beercard panel panel-primary bootcards-media">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ name }}</h3>
-      <h2 class="beer-title"><a href="{{#unless single}}{{pathFor route='beer.show' slug=slug}}{{else}}#{{/unless}}">{{title}}</a></h2>
+      <h1 class="panel-title  text-center">{{ name }}</h1>
     </div>
       <img src="{{image}}" alt="{{name}}" class="img-responsive"/>
     <div class="panel-body">
-      {{description}}
+      <p class="padding-small-horizontal">{{description}}</p>
     </div>
-        <div class="panel-heading">
-          <h3 class="panel-title text-center">Average Ratings</h3>
-        </div>
-        {{> currentRatings}}
         <div class="panel-heading text-center">
-          <h3 class="panel-title">Your Ratings</h3>
+          <h3 class="panel-title"><i class="fa fa-thumbs-up"></i>   Ratings  <i class="fa fa-thumbs-down"></i></h3>
         </div>
         <div class="panel-body">
-
-           {{> rating}}
-
+          {{> currentRatings}}
+          {{> rating}}
         </div>
-
 </div>
 {{/each}}
-
-
 </template>

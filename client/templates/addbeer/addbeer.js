@@ -7,7 +7,7 @@ Template.addbeer.events({
       description = event.target.textarea.value,
       beerimage = Session.get("photo");
 
-
+      if (!name || !beerimage) { alert('Beer name and photo required, time to stop drinking Mel'); return false;}
     //console.log(beerImage);
 
     Meteor.call("addBeer", name, description, beerimage);
@@ -49,10 +49,10 @@ Template.addbeerlist.events({
 });
 
 Template.addbeerlist.helpers({
-  beers: function() {
-    return Beers.find({});
-}
-});
+    beers: function() {
+      return Beers.find().fetch().reverse();
+  }
+  });
 
 Template.removebutton.helpers({
     // check if user is an admin

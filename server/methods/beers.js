@@ -1,5 +1,6 @@
 Meteor.methods({
   addBeer: function(name, description, beerimage) {
+
     Beers.insert({
       name: name,
       description: description,

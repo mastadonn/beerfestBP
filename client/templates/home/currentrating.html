@@ -1,11 +1,30 @@
 <template name="currentRatings">
-  <div class="currentRatings panel-body">
-    <div class="panel-body">
-      <h2><i class="fa fa-beer"></i> <stong>Taste {{currentTasteRating}}</stong><span class="badge">{{tasteRatingTotal}}</span></h2>
-     </div>
-
-      <h2><i class="fa fa-eye"></i> <stong>Packaging {{currentPackagingRating}}</stong><span class="badge">{{packagingRatingTotal}}</span></h2>
-
-  </div>
-
+  <div class="currentRatings">
+        <table class="table table-bordered table-hover">
+        <tbody>
+        <tr>
+        <td>
+          <i class="fa fa-beer rateicon"></i>
+        </td>
+        <td>
+          Taste Score:
+        </td>
+        <td>
+          {{currentTasteRating}}<span class="badge">{{tasteRatingTotal}}</span>
+        </td>
+        </tr>
+        <tr>
+        <td>
+          <i class="fa fa-eye rateicon"></i>
+        </td>
+        <td>
+          Packaging Score:
+        </td>
+        <td>
+          {{currentPackagingRating}}<span class="badge">{{packagingRatingTotal}}</span>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+</div>
 </template>
