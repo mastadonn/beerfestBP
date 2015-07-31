@@ -5,7 +5,6 @@
 
 meteor-platform
 accounts-password
-useraccounts:bootstrap
 alanning:roles
 zimme:iron-router-active
 cmather:handlebars-server@0.2.0
@@ -23,17 +22,11 @@ aldeed:collection2
 aldeed:autoform
 houston:admin
 underscore
-mrt:accounts-admin-ui-bootstrap-3
 cfs:standard-packages
-cfs:gridfs
-cfs:filesystem
 cfs:autoform
-tomi:upload-jquery
-tomi:upload-server
 mdg:camera
-semantic:ui-rating
-less
-meteoric:ionic
 dandv:jquery-rateit
 reactive-var
-meteorflux:dispatcher
+flemay:less-autoprefixer
+mrt:accounts-admin-ui-bootstrap-3
+useraccounts:bootstrap

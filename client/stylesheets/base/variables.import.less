@@ -1,8 +1,7 @@
 // Bootstrap Variables
 @import "./lib/bootstrap/variables.import.less";
-@import url(http://fonts.googleapis.com/css?family=Lobster|Berkshire+Swash|UnifrakturMaguntia);
 @import url(http://fonts.googleapis.com/css?family=Bree+Serif);
-
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700);
 // Custom Variables
 @brand-primary: #243757;
 //337ab7
@@ -17,7 +16,7 @@
   font-family: 'Bree Serif', serif;
   color: #fff;
   font-weight:400;
-  font-size: 34px;
+  font-size: 24px;
 }
 .panel-body{
   font-family: @font-family-sans-serif;
@@ -28,12 +27,30 @@
   font-stretch: semi-expanded;
 }
 .rateicon, .i {
-  padding: 6px;
+  padding-left: 6px;
   color: #00aad7;
 }
 .beerfesttitle{
-  font-family: 'UnifrakturMaguntia', cursive;
-  font-size: 45px;
-  font-weight: normal;
-  line-height: 32px;
+  font-family: 'Roboto Slab', serif;
+  font-size:28px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+
+div.svg div.rateit-range {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTVweCIgaGVpZ2h0PSIxNXB4Ij4NCiAgPHRleHQgeD0iMCIgeT0iMTUiIGZpbGw9ImJsYWNrIiBmb250LXNpemU9IjE4Ij7inKY8L3RleHQ+DQo8L3N2Zz4=') /*star-normal.svg*/;
+  *background: url(star-normal.svg); /* For IE 6 and 7 */
+}
+div.svg div.rateit-hover {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTUiIGhlaWdodD0iMTUiPg0KICA8dGV4dCB4PSIwIiB5PSIxNSIgZmlsbD0ieWVsbG93IiBmb250LXNpemU9IjE4Ij7inKY8L3RleHQ+DQo8L3N2Zz4=') /*star-hover.svg*/;
+  *background: url(star-hover.svg); /* For IE 6 and 7 */
+}
+div.svg div.rateit-selected {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTUiIGhlaWdodD0iMTUiPg0KICA8dGV4dCB4PSIwIiB5PSIxNSIgZmlsbD0icmVkIiBmb250LXNpemU9IjE4Ij7inKY8L3RleHQ+DQo8L3N2Zz4=') /*star-selected.svg*/;
+  *background: url(star-selected.svg); /* For IE 6 and 7 */
+}
+div.svg div.rateit-preset {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj4NCiAgPHRleHQgeD0iMCIgeT0iMTUiIGZpbGw9ImJsYWNrIiBmb250LXNpemU9IjE1Ij7inKY8L3RleHQ+DQo8L3N2Zz4=') /*star-preset.svg*/;
+  *background: url(star-preset.svg); /* For IE 6 and 7 */
 }
