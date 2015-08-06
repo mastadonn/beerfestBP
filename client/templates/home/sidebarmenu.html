@@ -1,0 +1,11 @@
+<template name="sidebarmenu">
+  <div class="ui thin sidebar inverted vertical menu" id="homeSidebar">
+    <a class="item {{ isActiveRoute regex='home' }}" href="{{ pathFor 'home' }}"><i class="fa fa-beer"></i> Home</a>
+    <a class="item {{ isActiveRoute regex='results' }}" href="{{ pathFor 'results' }}"><i class="fa fa-star"></i> Results</a>
+    {{> admin}}
+    {{> mod}}
+    {{#if currentUser}}
+    <a class="item" href="#" data-action="logout"><i class="fa fa-lock"></i> Sign Out</a>
+    {{/if}}
+  </div>
+</template>

@@ -1,55 +1,50 @@
 <template name="addbeerlist">
-  <ul class="list-group">
+  <div class="ui big celled list">
     {{#each beers}}
-    <li class="list-group-item">
-  <div class="media">
-  <div class="media-left">
-      <img class="media-object addthumb" src={{image}} alt={{ name }}/>
-  </div>
-  <div class="media-body">
+  <div class="item">
+    <img class="ui avatar image" src="{{image}}" alt="{{name}}">
+    <div class="content">
+      <div class="header">{{name}}</div>
+      {{ description }}
+    </div>
     {{> removebutton}}
-    <h4 class="media-heading">{{ name }}</h4>
-    {{ description }}
-
   </div>
+
+    {{/each}}
 </div>
 
-  </li>
-  {{/each}}
-</ul>
 </template>
 
 
 <template name="removebutton">
   {{#if isAdminUser}}
-<button class="delete btn btn-danger pull-right">Remove</button>
+<button class="delete negative ui button pull-right">Remove</button>
   {{/if}}
 </template>
 
 
 <template name="addbeer">
-<div class="panel panel-default">
+<div class="ui container newbeer">
   <!-- Default panel contents -->
-  <div class="panel-heading text-center panel-title h3 strong">Add a Beer</div>
-  <div class="panel-body">
-    <form class="new-beer">
-      <div class="panel panel-primary">
-       <input class=form-control type="text" name="text" placeholder="Beer name" />
-       <input class=form-control type="textarea" name="textarea" placeholder="description" />
-       <input class="takephoto btn btn-primary btn-block" value="Take Photo"/>
-        {{#if photo}}
-          <div class="text-center">
-            <img src={{photo}} class="img-responsive beerimg"/>
-          </div>
-        {{/if}}
-       <input class="btn btn-success btn-block" type="submit" name="submit" value="Add Beer"/>
-       </div>
-     </form>
+    <div class="ui segment text-center"><h3>Add a Beer</h3></div>
+      <form class="ui form newbeer">
+      <div class="field">
+      <input type="text" name="name" placeholder="Beer name">
+      </div>
+      <div class="field">
+      <input type="text"  name="description" placeholder="description">
+      </div>
+      <button class="ui blue button takephoto" type="button"><i class="camera icon"></i>Take photo</button>
+      {{#if photo}}
+
+      <div class="text-center">
+        <img class="ui fluid image beerimg" src="{{photo}}" />
+      </div>
+      {{/if}}
+      <button class="newbeer ui green button" type="submit" name="submit"><i class="plus icon"></i>Add Beer</button>
+       </form>
+
+    {{> addbeerlist}}
   </div>
 
-  <!-- List group -->
-  <ul class="list-group">
-    {{> addbeerlist}}
-  </ul>
-</div>
 </template>

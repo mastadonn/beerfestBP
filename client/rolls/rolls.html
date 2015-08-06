@@ -1,5 +1,13 @@
-<template name="adminTemplate">
+<template name="admin">
     {{#if isAdminUser}}
-        {{> accountsAdmin}}
+    <a class="item {{ isActiveRoute regex='admin' }}" href="{{ pathFor 'admin' }}"><i class="fa fa-gear"></i> Admin</a>
+    <a class="item {{ isActiveRoute regex='addbeer' }}" href="{{ pathFor 'addbeer' }}"><i class="fa fa-plus"></i> Add Beer</a>
+    {{/if}}
+</template>
+
+
+<template name="mod">
+    {{#if isModUser}}
+    <a class="item {{ isActiveRoute regex='addbeer' }}" href="{{ pathFor 'addbeer' }}"><i class="fa fa-plus"></i> Add Beer</a>
     {{/if}}
 </template>

@@ -1,31 +1,17 @@
 <template name="rating">
   <div class="currentRatings">
-        <table class="table table-bordered table-hover">
-        <tbody>
-        <tr>
-          <td>
-            <i class="fa fa-beer rateicon fa-align-cente"></i>
-          </td>
-          <td>
-          Your Taste Score:
-          </td>
-          <td>
-            <div class="rateit svg" id="rateitTaste" min="0" max="5" value="0" data-rateit-step="1" data-rateit-resetable="false" data-class="bigstars" >
-             </div>                </td>
-          </tr>
-          <tr>
-          <td>
-            <i class="fa fa-eye rateicon fa-align-cente"></i>
-          </td>
-          <td>
-            Your Packaging Score:
-          </td>
-          <td>
-            <div class="rateit svg" id="rateitPackaging"  min="0" max="5" value="0" data-rateit-step="1" data-rateit-resetable="false" >
-            </div>
-          </td>
-        </tr>
-        </tbody>
-        </table>
+    <div class="ui  compact menu">
+    <a class="item">
+      <i class="icon beer"></i>
+      <div class="rateit svg" id="rateitTaste" min="0" max="5" value="0" data-rateit-step="1" data-rateit-resetable="false" data-class="bigstars" ></div>
+    </a>
+    <a class="item">
+      <i class="icon eye"></i>
+      <div class="rateit svg" id="rateitPackaging"  min="0" max="5" value="0" data-rateit-step="1" data-rateit-resetable="false" ></div>
+    </a>
+
+
+
+  </div>
 </div>
 </template>

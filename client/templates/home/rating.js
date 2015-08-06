@@ -1,6 +1,8 @@
 Template.rating.rendered = function () {
+  this.$(".dropdown").dropdown();
   this.$('.rateit').rateit();
 };
+
 
 Template.rating.events({
   'click #rateitTaste' : function (event, template) {
@@ -21,3 +23,12 @@ Template.rating.events({
      Meteor.call("addratingpackaging" , userPackaging ,beerId);
   }
  });
+
+
+//  Template.rating.helpers({
+//     'Ratings': function(){
+//     var currentUserId = Meteor.userId();
+//     console.log(Ratings.find({userId: currentUserId},{beer: this.id},{tasteRating: value} ));
+//
+// }
+//   });

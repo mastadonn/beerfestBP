@@ -1,7 +1,5 @@
 Meteor.subscribe("ratings");
 
-
-
 Template.currentRatings.helpers({
     tasteRatingTotal: function() {
       var tasteRatingTotal = Ratings.find({ beer: this._id ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).count();
@@ -13,9 +11,12 @@ Template.currentRatings.helpers({
 
       Ratings.find({ beer: this._id ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).map(function(doc) {
         tasteTotal += doc.tasteRating;  });
-      var tasteRatingAverage = tasteTotal / tasteRatingTotal ,
-      tasteRatingDisplayAverage = tasteRatingAverage.toFixed(1);
-      return tasteRatingDisplayAverage;
+      if (tasteRatingTotal === 0) { return tasteRatingTotal; }
+      else {
+        var tasteRatingAverage = tasteTotal / tasteRatingTotal ,
+        tasteRatingDisplayAverage = tasteRatingAverage.toFixed(1);
+      return tasteRatingDisplayAverage; }
+
     },
     packagingRatingTotal: function() {
       var packagingRatingTotal = Ratings.find({ beer: this._id ,packagingRating: {$gt: 0} },{fields: {packagingRating: 1 }} ).count();
@@ -27,9 +28,12 @@ Template.currentRatings.helpers({
 
       Ratings.find({ beer: this._id ,packagingRating: {$gt: 0} },{fields: {packagingRating: 1 }} ).map(function(doc) {
         packagingTotal += doc.packagingRating;  });
-      var packagingRatingAverage = packagingTotal / packagingRatingTotal ,
-      packagingRatingDisplayAverage = packagingRatingAverage.toFixed(1);
-      return packagingRatingDisplayAverage;
+
+        if (packagingRatingTotal === 0) { return packagingRatingTotal; }
+        else {
+        var packagingRatingAverage = packagingTotal / packagingRatingTotal ,
+        packagingRatingDisplayAverage = packagingRatingAverage.toFixed(1);
+        return packagingRatingDisplayAverage; }
 }
 });
 

@@ -1,3 +1,5 @@
-Template.results.rendered = function() {
-
-};
+Template.results.helpers({
+  beers: function() {
+    return Beers.find().fetch().reverse();
+}
+});

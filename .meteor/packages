@@ -29,4 +29,5 @@ dandv:jquery-rateit
 reactive-var
 flemay:less-autoprefixer
 mrt:accounts-admin-ui-bootstrap-3
-useraccounts:bootstrap
+semantic:ui
+useraccounts:semantic-ui

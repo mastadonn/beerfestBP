@@ -1,10 +1,11 @@
 Meteor.subscribe("beers");
 
 Template.addbeer.events({
-  "submit .new-beer": function (event) {
+  "submit .newbeer": function (event) {
     // This function is called when the new task form is submitted
-    var name = event.target.text.value,
-      description = event.target.textarea.value,
+      event.preventDefault();
+      var name = event.target.name.value,
+      description = event.target.description.value,
       beerimage = Session.get("photo");
 
       if (!name || !beerimage) { alert('Beer name and photo required, time to stop drinking Mel'); return false;}
@@ -13,8 +14,8 @@ Template.addbeer.events({
     Meteor.call("addBeer", name, description, beerimage);
 
       // Clear form
-      event.target.text.value = "";
-      event.target.textarea.value = "";
+      event.target.name.value = "";
+      event.target.description.value = "";
       Session.set("photo", "");
       // Prevent default form submit
       return false;

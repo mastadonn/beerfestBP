@@ -1,20 +1,45 @@
 <template name="beerCardList">
   {{#each beers}}
-  <div class="beercard panel panel-primary bootcards-media">
-    <div class="panel-heading">
-      <h1 class="panel-title  text-center">{{ name }}</h1>
-    </div>
+  <div class="ui centered cards">
+  <div class="card">
+    <div class="image">
       <img src="{{image}}" alt="{{name}}" class="img-responsive"/>
+    </div>
+    <div class="content">
+      <div class="header">{{ name }}</div>
+
+      <div class="description">
+        {{description}}
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated">
+        {{> currentRatings}}
+
+      </span>
+      <span>
+        {{> rating}}
+
+      </span>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- <div class="beercard panel panel-primary bootcards-media">
+    <div class="panel-heading">
+      <h1 class="panel-title  text-center"></h1>
+    </div>
     <div class="panel-body">
-      <p class="padding-small-horizontal">{{description}}</p>
+      <p class="padding-small-horizontal"></p>
     </div>
         <div class="panel-heading text-center">
           <h3 class="panel-title"><i class="fa fa-thumbs-up"></i>   Ratings  <i class="fa fa-thumbs-down"></i></h3>
         </div>
         <div class="panel-body">
-          {{> currentRatings}}
-          {{> rating}}
+
+
         </div>
-</div>
+</div> -->
 {{/each}}
 </template>

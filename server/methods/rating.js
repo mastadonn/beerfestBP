@@ -16,5 +16,11 @@ Meteor.methods({
         createdAt: new Date()
     });
   },
-
+//   tasteRatingUpdate: function(tasteRatingDisplayAverage ,tasteRatingTotal ,beerId ){
+//   Beers.update(beerId,{
+//       beer: this.beer,
+//       tasteRating: tasteRatingDisplayAverage,
+//       tasteVotes: tasteRatingTotal
+//   });
+// },
 });

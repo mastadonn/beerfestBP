@@ -5,10 +5,12 @@
 
   {{> _header}}
 
-  <div class="container-fluid">
-    {{> yield}}
-  </div>
-
+  <body>
+  {{> sidebarmenu}}
+    <div class="pusher">
+      {{> yield}}
+    </div>
+  </body>
 
   {{> _footer}}
 </template>
