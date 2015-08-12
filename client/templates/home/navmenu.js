@@ -11,3 +11,13 @@ Template.navmenu.events({
   }
 
 });
+
+Template.sidebarmenu.events({
+  'click #homeSidebar': function(ev){
+    var element = $('#homeSidebar');
+          element.sidebar('setting', 'transition', 'overlay');
+          element.sidebar('toggle');
+
+  }
+
+});

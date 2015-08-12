@@ -4,6 +4,7 @@ Template.rating.rendered = function () {
 };
 
 
+
 Template.rating.events({
   'click #rateitTaste' : function (event, template) {
     var beerId = this._id,
@@ -25,10 +26,11 @@ Template.rating.events({
  });
 
 
-//  Template.rating.helpers({
-//     'Ratings': function(){
-//     var currentUserId = Meteor.userId();
-//     console.log(Ratings.find({userId: currentUserId},{beer: this.id},{tasteRating: value} ));
-//
-// }
-//   });
+ Template.rating.events({
+    'click .item' :  function(){
+      var usertasteRating = Ratings.find({ beer: this._id , userID: this.userID, tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).fetch();
+      console.log(usertasteRating);
+      if (usertasteRating === 0) { $('#rateitTaste').rateit('value', usertasteRating); }
+      else{console.log("nothing found");}
+}
+  });

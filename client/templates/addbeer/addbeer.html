@@ -34,17 +34,28 @@
       <div class="field">
       <input type="text"  name="description" placeholder="description">
       </div>
-      <button class="ui blue button takephoto" type="button"><i class="camera icon"></i>Take photo</button>
-      {{#if photo}}
 
-      <div class="text-center">
-        <img class="ui fluid image beerimg" src="{{photo}}" />
-      </div>
-      {{/if}}
+      {{> imageupload}}
+
+
+
       <button class="newbeer ui green button" type="submit" name="submit"><i class="plus icon"></i>Add Beer</button>
        </form>
+
 
     {{> addbeerlist}}
   </div>
 
 </template>
+
+
+<template name="imageupload">
+  <div class="field">
+  <input class="ui blue button file fileinput"  type="file" >
+  </div>
+    {{#unless this.isUploaded}}
+    {{> FS.UploadProgressBar semantic=true}}
+    {{/unless}}
+
+
+  </template>

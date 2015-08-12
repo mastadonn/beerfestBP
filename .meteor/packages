@@ -19,7 +19,6 @@ cunneen:mailgun
 iron:router@1.0.0
 yasinuslu:blaze-meta
 aldeed:collection2
-aldeed:autoform
 houston:admin
 underscore
 cfs:standard-packages
@@ -28,6 +27,11 @@ mdg:camera
 dandv:jquery-rateit
 reactive-var
 flemay:less-autoprefixer
-mrt:accounts-admin-ui-bootstrap-3
 semantic:ui
 useraccounts:semantic-ui
+cfs:gridfs
+cfs:ui
+cfs:graphicsmagick
+aldeed:simple-schema
+standard-app-packages
+fastclick

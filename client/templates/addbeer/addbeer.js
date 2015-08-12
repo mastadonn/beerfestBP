@@ -1,4 +1,5 @@
 Meteor.subscribe("beers");
+Meteor.subscribe("images");
 
 Template.addbeer.events({
   "submit .newbeer": function (event) {
@@ -17,16 +18,18 @@ Template.addbeer.events({
       event.target.name.value = "";
       event.target.description.value = "";
       Session.set("photo", "");
+      
       // Prevent default form submit
       return false;
 }
 });
 
-    Template.addbeer.helpers({
+    Template.imageupload.helpers({
         photo: function () {
           return Session.get("photo");
         }
       });
+
 
     Template.addbeer.events({
       "click .takephoto": function () {
@@ -60,4 +63,17 @@ Template.removebutton.helpers({
     isAdminUser: function() {
         return Roles.userIsInRole(Meteor.user(), ['admin']);
     }
+});
+
+
+Template.imageupload.events({
+  'change .fileinput': function(event, template) {
+    FS.Utility.eachFile(event, function(file) {
+      Images.insert(file, function (error, fileObj) {
+        Session.set("photo", fileObj.url({brokenIsFine: true}));
+        console.log(error);
+        // Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
+      });
+    });
+  }
 });
