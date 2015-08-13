@@ -18,7 +18,7 @@ Template.addbeer.events({
       event.target.name.value = "";
       event.target.description.value = "";
       Session.set("photo", "");
-      
+
       // Prevent default form submit
       return false;
 }
@@ -69,9 +69,9 @@ Template.removebutton.helpers({
 Template.imageupload.events({
   'change .fileinput': function(event, template) {
     FS.Utility.eachFile(event, function(file) {
-      Images.insert(file, function (error, fileObj) {
+      Images.insert(file, function (err, fileObj) {
         Session.set("photo", fileObj.url({brokenIsFine: true}));
-        console.log(error);
+        console.log(err);
         // Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
       });
     });

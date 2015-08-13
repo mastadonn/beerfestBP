@@ -21,7 +21,6 @@ yasinuslu:blaze-meta
 aldeed:collection2
 houston:admin
 underscore
-cfs:standard-packages
 cfs:autoform
 mdg:camera
 dandv:jquery-rateit
@@ -29,9 +28,11 @@ reactive-var
 flemay:less-autoprefixer
 semantic:ui
 useraccounts:semantic-ui
-cfs:gridfs
 cfs:ui
 cfs:graphicsmagick
 aldeed:simple-schema
 standard-app-packages
 fastclick
+cfs:standard-packages
+cfs:s3
+cfs:filesystem
