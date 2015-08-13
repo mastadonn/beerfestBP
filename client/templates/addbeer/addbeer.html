@@ -24,6 +24,8 @@
 
 
 <template name="addbeer">
+  {{#if isInRole 'admin,mod'}}
+
 <div class="ui container newbeer">
   <!-- Default panel contents -->
     <div class="ui segment text-center"><h3>Add a Beer</h3></div>
@@ -37,15 +39,14 @@
 
       {{> imageupload}}
 
-
-
       <button class="newbeer ui green button" type="submit" name="submit"><i class="plus icon"></i>Add Beer</button>
        </form>
 
 
-    {{> addbeerlist}}
-  </div>
 
+  </div>
+{{/if}}
+{{> addbeerlist}}
 </template>
 
 

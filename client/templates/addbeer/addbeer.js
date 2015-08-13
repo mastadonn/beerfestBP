@@ -10,6 +10,7 @@ Template.addbeer.events({
       beerimage = Session.get("photo");
 
       if (!name || !beerimage) { alert('Beer name and photo required, time to stop drinking Mel'); return false;}
+
     //console.log(beerImage);
 
     Meteor.call("addBeer", name, description, beerimage);
