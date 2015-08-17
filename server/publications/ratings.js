@@ -1,7 +1,7 @@
 Meteor.publishComposite("ratings", function() {
   return {
     find: function() {
-      return Ratings.find({});
+      return Ratings.find({userId: Meteor.userID});
     }
     // ,
     // children: [
@@ -11,5 +11,5 @@ Meteor.publishComposite("ratings", function() {
     //     }
     //   }
     // ]
-  }
+  };
 });

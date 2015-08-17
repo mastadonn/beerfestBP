@@ -32,7 +32,6 @@ cfs:ui
 cfs:graphicsmagick
 aldeed:simple-schema
 standard-app-packages
-fastclick
 cfs:standard-packages
 cfs:s3
 cfs:filesystem

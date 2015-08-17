@@ -4,7 +4,7 @@ Ratings.helpers({
 
 });
 
-RatingsSchema = new SimpleSchema({
+Ratings.attachSchema = new SimpleSchema({
   beer: {
     type: String,
     label: "Beer"
