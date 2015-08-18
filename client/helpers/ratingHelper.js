@@ -1,12 +1,11 @@
-Meteor.subscribe("ratings");
+Template.registerHelper('tasteRatingTotal', function() {
+  var tasteRatingTotal = Ratings.find({ beer: this._id ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).count();
+return tasteRatingTotal;
+});
 
 
-Template.currentRatings.helpers({
-    tasteRatingTotal: function() {
-      var tasteRatingTotal = Ratings.find({ beer: this._id ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).count();
-    return tasteRatingTotal;
-    },
-    currentTasteRating: function() {
+
+Template.registerHelper('currentTasteRating', function() {
       var tasteTotal = 0,
       tasteRatingTotal = Ratings.find({ beer: this._id ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).count();
 
@@ -16,16 +15,18 @@ Template.currentRatings.helpers({
       else {
         var tasteRatingAverage = tasteTotal / tasteRatingTotal ,
         tasteRatingDisplayAverage = tasteRatingAverage.toFixed(1);
-        beerId = this._id;
-      Meteor.call("updateBeerRatingTaste", beerId, tasteRatingTotal, tasteRatingDisplayAverage );
+      //   beerId = this._id;
+      // Meteor.call("updateBeerRatingTaste", beerId, tasteRatingTotal, tasteRatingDisplayAverage );
       return tasteRatingDisplayAverage; }
+});
 
-    },
-    packagingRatingTotal: function() {
+Template.registerHelper('packagingRatingTotal', function() {
       var packagingRatingTotal = Ratings.find({ beer: this._id ,packagingRating: {$gt: 0} },{fields: {packagingRating: 1 }} ).count();
     return packagingRatingTotal;
-    },
-    currentPackagingRating: function() {
+});
+
+
+Template.registerHelper('currentPackagingRating', function() {
       var packagingTotal = 0,
       packagingRatingTotal = Ratings.find({ beer: this._id ,packagingRating: {$gt: 0} },{fields: {packagingRating: 1 }} ).count();
 
@@ -35,18 +36,7 @@ Template.currentRatings.helpers({
         if (packagingRatingTotal === 0) { return packagingRatingTotal; }
         else {
         var packagingRatingAverage = packagingTotal / packagingRatingTotal ,
-        packagingRatingDisplayAverage = packagingRatingAverage.toFixed(1),
-        beerId = this._id;
-        Meteor.call("updateBeerRatingPackaging", beerId, packagingRatingTotal, packagingRatingDisplayAverage );
+        packagingRatingDisplayAverage = packagingRatingAverage.toFixed(1);
         return packagingRatingDisplayAverage; }
-}
+
 });
-
-//{user: this.userId}
-//   Ratings.find( { $and: [ { beer: "zCLDeWJkuGZESqZjM"}, {fields: {tasteRating: tasteRating } } ] }).fetch();
-
-// Ratings.find({ beer: "zCLDeWJkuGZESqZjM",tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).fetch();
-
-
-
-// var test = Ratings.find({ beer: 'zCLDeWJkuGZESqZjM' ,tasteRating: {$gt: 0} },{fields: {tasteRating: 1 }} ).fetch().sum('packagingRating');

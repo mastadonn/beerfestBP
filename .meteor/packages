@@ -35,3 +35,4 @@ standard-app-packages
 cfs:standard-packages
 cfs:s3
 cfs:filesystem
+mrt:publish-with-relations

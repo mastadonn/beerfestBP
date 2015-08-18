@@ -1,16 +1,16 @@
 <template name="rating">
-  <button class="ui toggle green basic labeled icon button right floated vote {{voted}}" id="vote">
+  <button class="ui toggle green basic labeled icon button large right floated vote {{voted}}" id="vote">
     <i class="check circle icon"></i>
     <label>Vote</label>
   </button>
   <div class="userRatings">
     <div class="ui  compact menu">
     <a class="item">
-      <i class="icon beer"></i>
+      <h1> <small><i class="icon beer center"></i></small></h1>
       <div class="rateit svg rateitTaste" id="rateitTaste" min="0" max="5" value="0" data-rateit-step="1" data-rateit-value="{{tasteValue}}" data-rateit-resetable="false" data-rateit-starwidth="32" data-rateit-starheight="32" ></div>
     </a>
     <a class="item">
-      <i class="icon eye"></i>
+      <h3><i class="icon eye"></i></h3>
       <div class="rateit svg rateitPackaging" id="rateitPackaging"  min="0" max="5" value="0" data-rateit-step="1" data-rateit-value="{{packagingValue}}" data-rateit-resetable="false" data-rateit-starwidth="32" data-rateit-starheight="32" ></div>
     </a>
   </div>

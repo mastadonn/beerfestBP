@@ -1,5 +1,5 @@
 Beers.allow({
-  'insert': function(userId, doc) {
+  'insert': function(userId, doc, fields, modifier) {
     return userId;
   },
   'update': function(userId, doc, fields, modifier) {
