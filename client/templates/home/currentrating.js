@@ -1,5 +1,5 @@
 Meteor.subscribe("ratings");
-
+Meteor.subscribe("beers");
 
 Template.currentRatings.helpers({
     tasteRatingTotal: function() {
@@ -38,7 +38,20 @@ Template.currentRatings.helpers({
         packagingRatingDisplayAverage = packagingRatingAverage.toFixed(1),
         beerId = this._id;
         Meteor.call("updateBeerRatingPackaging", beerId, packagingRatingTotal, packagingRatingDisplayAverage );
-        return packagingRatingDisplayAverage; }
+
+
+        var y = Number(Beers.findOne({ _id: this._id }).packagingRatingDisplayAverage),
+        x = Number(Beers.findOne({ _id: this._id }).tasteRatingDisplayAverage),
+        z = x + y,
+        totalRating = z /2;
+        var beerRatingTotal = totalRating.toFixed(1);
+        Meteor.call("updateBeerRatingTotal", beerId, beerRatingTotal );
+        // console.log(beerRatingTotal);
+
+        return packagingRatingDisplayAverage;
+      }
+
+
 }
 });
 

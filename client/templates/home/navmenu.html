@@ -1,20 +1,29 @@
 <template name="navmenu">
-        <div class="ui large top attached inverted menu">
-          <a class="item" id="homeSidebarToggle"> <i class="sidebar icon"></i></a>
+        <div class="ui large top attached inverted fluid four menu">
             <a class="item beerfesttitle" href="{{pathFor 'home'}}"><i class="fa fa-beer"></i> Beerfest 8</a>
+            <a class="item  {{ isActiveRoute regex='total' }}" href="{{ pathFor 'total' }}"><i class="star icon center"></i></a>
+            <a class="item {{ isActiveRoute regex='taste' }}" href="{{ pathFor 'taste' }}"><i class="beer icon center"></i></a>
+            <a class="item {{ isActiveRoute regex='packaging' }}" href="{{ pathFor 'packaging' }}"><i class="eye icon center"></i></a>
+            <!-- <a class="item {{ isActiveRoute regex='insta' }}" href="{{ pathFor 'insta' }}"><i class="camera icon center"></i></a> -->
+
+
+
           {{#if currentUser}}
           {{else}}
-          <div class="ui inverted compact segment buttons right menu">
+          <div class="ui  inverted compact segment buttons right menu">
               <a class="ui item inverted button active vertically fitted " href="{{ pathFor 'atSignIn' }}" >Sign in </a>
-              <a class="ui item inverted blue button vertically fitted" href="{{ pathFor 'atSignUp' }}" >Register</a>
+              <a class="ui item inverted  blue button vertically fitted" href="{{ pathFor 'atSignUp' }}" >Register</a>
           </div>
           {{/if}}
+          {{> navtoggle}}
 
         </div>
-
 </template>
 
 
+<template name="navtoggle">
+<a class="item  right floated" id="homeSidebarToggle"> <i class="sidebar icon"> </i></a>
+</template>
           <!-- <template name="sidemenu">
             <body>
             <div class="ui left overlay menu sidebar">

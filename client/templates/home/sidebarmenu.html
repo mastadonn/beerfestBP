@@ -1,7 +1,11 @@
 <template name="sidebarmenu">
-  <div class="ui thin sidebar inverted vertical menu" id="homeSidebar">
+  <div class="ui thin sidebar inverted vertical menu right" id="homeSidebar">
     <a class="item {{ isActiveRoute regex='home' }}" href="{{ pathFor 'home' }}"><i class="fa fa-beer"></i> Home</a>
-    <a class="item {{ isActiveRoute regex='results' }}" href="{{ pathFor 'results' }}"><i class="fa fa-star"></i> Results</a>
+    <a class="item {{ isActiveRoute regex='total' }}" href="{{ pathFor 'total' }}"><i class="trophy icon center"></i>Total Results</a>
+    <a class="item {{ isActiveRoute regex='taste' }}" href="{{ pathFor 'taste' }}"><i class="beer icon center"></i>Taste Results</a>
+    <a class="item {{ isActiveRoute regex='packaging' }}" href="{{ pathFor 'packaging' }}"><i class="eye icon center"></i>Packaging Results</a>
+
+
     {{> admin}}
     {{> mod}}
     {{#if currentUser}}

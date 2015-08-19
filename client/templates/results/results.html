@@ -1,27 +1,75 @@
-<template name="results">
+<template name="total">
   <div class="ui container">
     <div class="ui raised horizontal segments ">
       <div class="ui center aligned segment">
-        <h2><i class="circular trophy icon"></i> Results</h2>
+        <h2><i class="circular trophy icon"></i>Total Results</h2>
       </div>
-      <div class="ui center aligned segment">
-          <div class="ui large blue icon buttons">
-          <button class="ui button"><i class="star icon center"></i></button>
-          <button class="ui button"><i class="beer icon center"></i></button>
-          <button class="ui button"><i class="eye icon center"></i></button>
-        </div>
-      </div>
-    </div>
-      <div class="ui middle aligned divided list">
 
-        {{#each beers}}
+    </div>
+        <div class="ui middle aligned divided list">
+        {{#each total}}
             <div class="item">
               <img class="ui avatar image" src="{{image}}" alt="{{name}}"/>
               <div class="content">
-                {{name}}
+                <h3>{{name}}</h3>
+              </div>
+              <div class="content right floated">
+                <a class="ui blue label"><h3> <i class="icon star"></i> {{beerRatingTotal}}</h3></a>
+                <!-- <div class="floating ui blue label">{{tasteRatingTotal}}</div> -->
               </div>
             </div>
+        {{/each}}
 
+      </div>
+  </div>
+</template>
+
+<template name="taste">
+  <div class="ui container">
+    <div class="ui raised horizontal segments ">
+      <div class="ui center aligned segment">
+        <h2><i class="circular trophy icon"></i>Taste Results</h2>
+      </div>
+
+    </div>
+      <div class="ui middle aligned divided list">
+        {{#each taste}}
+            <div class="item">
+              <img class="ui avatar image" src="{{image}}" alt="{{name}}"/>
+              <div class="content">
+                <h3>{{name}}</h3>
+              </div>
+              <div class="content right floated">
+                <a class="ui blue label"><h3> <i class="icon beer"></i> {{tasteRatingDisplayAverage}}</h3></a>
+                <!-- <div class="floating ui blue label">{{tasteRatingTotal}}</div> -->
+              </div>
+            </div>
+        {{/each}}
+
+      </div>
+  </div>
+</template>
+
+<template name="packaging">
+  <div class="ui container">
+    <div class="ui raised horizontal segments ">
+      <div class="ui center aligned segment">
+        <h2><i class="circular trophy icon"></i>Packaging Results</h2>
+      </div>
+
+    </div>
+      <div class="ui middle aligned divided list">
+        {{#each packaging}}
+            <div class="item">
+              <img class="ui avatar image" src="{{image}}" alt="{{name}}"/>
+              <div class="content">
+                <h3>{{name}}</h3>
+              </div>
+              <div class="content right floated">
+                <a class="ui blue label"><h3> <i class="icon eye"></i> {{packagingRatingDisplayAverage}}</h3></a>
+                <!-- <div class="floating ui blue label">{{tasteRatingTotal}}</div> -->
+              </div>
+            </div>
         {{/each}}
 
       </div>

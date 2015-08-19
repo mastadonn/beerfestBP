@@ -12,16 +12,16 @@ Meteor.methods({
     Beers.remove(id);
   },
 
-  updateBeerRatingTaste: function(beerId, tasteRatingTotal, tasteRatingDisplayAverage){
-        Beers.update(
-          {_id: beerId},
-          {$set: {
-            tasteRatingTotal:tasteRatingTotal,
-            tasteRatingDisplayAverage: tasteRatingDisplayAverage
-          }},
-          { upsert: true }
-        );
-      },
+      updateBeerRatingTaste: function(beerId, tasteRatingTotal, tasteRatingDisplayAverage){
+            Beers.update(
+              {_id: beerId},
+              {$set: {
+                tasteRatingTotal:tasteRatingTotal,
+                tasteRatingDisplayAverage: tasteRatingDisplayAverage
+              }},
+              { upsert: true }
+            );
+          },
 
       updateBeerRatingPackaging: function(beerId, packagingRatingTotal, packagingRatingDisplayAverage){
             Beers.update(
@@ -32,7 +32,17 @@ Meteor.methods({
               }},
               { upsert: true }
             );
-              }
+          },
+        updateBeerRatingTotal: function(beerId, beerRatingTotal){
+                Beers.update(
+                  {_id: beerId},
+                  {$set: {
+                    beerRatingTotal:beerRatingTotal,
+                  }},
+                  { upsert: true }
+                );
+                  }
+
 
 
 

@@ -13,9 +13,17 @@ Router.map(function() {
       template: 'home'
       });
 
-      this.route('results', {
-      path: '/results',
-      template: 'results'
+      this.route('total', {
+      path: '/total',
+      template: 'total'
+      });
+      this.route('taste', {
+      path: '/taste',
+      template: 'taste'
+      });
+      this.route('packaging', {
+      path: '/packaging',
+      template: 'packaging'
       });
 });
 
