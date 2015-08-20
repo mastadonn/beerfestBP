@@ -20,6 +20,7 @@ Template.addbeer.events({
       event.target.description.value = "";
       Session.set("photo", "");
 
+      // Feedback.provide("addbeer");
       // Prevent default form submit
       return false;
 }

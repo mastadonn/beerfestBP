@@ -10,8 +10,18 @@ loadingTemplate: 'loading',
 Router.map(function() {
       this.route('home', {
       path: '/',
-      template: 'home'
-      });
+      // template: 'home'
+      loadingTemplate: 'loading',
+
+  waitOn: function () {
+    // return one handle, a function, or an array
+    return Meteor.subscribe('beers');
+  },
+
+  action: function () {
+    this.render('home');
+  }
+});
 
       this.route('total', {
       path: '/total',

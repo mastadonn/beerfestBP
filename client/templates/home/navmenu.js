@@ -3,7 +3,7 @@ if (Meteor.isClient) {
 }
 
 Template.navmenu.events({
-  'click #homeSidebarToggle': function(ev){
+  'click #homeSidebarToggle': function(){
     var element = $('#homeSidebar');
           element.sidebar('setting', 'transition', 'overlay');
           element.sidebar('toggle');
@@ -13,7 +13,7 @@ Template.navmenu.events({
 });
 
 Template.navmenubottom.events({
-  'click #homeSidebarToggle': function(ev){
+  'click #homeSidebarToggle': function(){
     var element = $('#homeSidebar');
           element.sidebar('setting', 'transition', 'overlay');
           element.sidebar('toggle');
@@ -23,7 +23,7 @@ Template.navmenubottom.events({
 });
 
 Template.appLayout.events({
-  'click #homeSidebar': function(ev){
+  'click #homeSidebar': function(){
     var element = $('#homeSidebar');
           element.sidebar('setting', 'transition', 'overlay');
           element.sidebar('toggle');
