@@ -2,15 +2,21 @@
   <!--[if lt IE 9]>
     <p class="browser-warning"><strong><i class="icon-exclamation-sign"></i> Warning</strong> - You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to properly view this website.</p>
   <![endif]-->
-
+ <div class="ui large top attached inverted fluid menu">
   {{> _header}}
+</div>
+      <div id="main" class="main">
 
-  <body>
-  {{> sidebarmenu}}
-    <div class="pusher">
-      {{> yield}}
-    </div>
-  </body>
-
-  {{> _footer}}
+        <body>
+          <div class="ui thin sidebar inverted vertical menu right" id="homeSidebar">
+            {{> sidebarmenu}}
+          </div>
+            <div class="pusher">
+              {{> yield}}
+            </div>
+        </body>
+      </div>
+    <!-- <div class="ui large bottom attached inverted fluid menu"> -->
+      {{> _footer}}
+    <!-- </div> -->
 </template>

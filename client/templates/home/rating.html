@@ -4,15 +4,18 @@
     <label>Vote</label>
   </button>
   <div class="userRatings">
-    <div class="ui  compact menu">
-    <a class="item">
-      <h1> <small><i class="icon beer center"></i></small></h1>
-      <div class="rateit svg rateitTaste" id="rateitTaste" min="0" max="5" value="0" data-rateit-step="1" data-rateit-value="{{tasteValue}}" data-rateit-resetable="false" data-rateit-starwidth="32" data-rateit-starheight="32" ></div>
-    </a>
-    <a class="item">
-      <h3><i class="icon eye"></i></h3>
-      <div class="rateit svg rateitPackaging" id="rateitPackaging"  min="0" max="5" value="0" data-rateit-step="1" data-rateit-value="{{packagingValue}}" data-rateit-resetable="false" data-rateit-starwidth="32" data-rateit-starheight="32" ></div>
-    </a>
+
+
+    <div class="ui  menu stackable two column grid">
+
+    <div class="column item ratingitem">
+      <h3> <i class="icon beer bottom aligned ratingicon"></i></h3>
+      <div class="rateit svg rateitTaste" id="rateitTaste" min="0" max="5" value="0" data-rateit-step="0.5" data-rateit-value="{{tasteValue}}" data-rateit-resetable="false" data-rateit-starwidth="32" data-rateit-starheight="32" ></div>
+    </div>
+    <div class="column item ratingitem">
+      <h3><i class="icon eye bottom aligned ratingicon"></i></h3>
+      <div class="rateit svg rateitPackaging" id="rateitPackaging"  min="0" max="5" value="0" data-rateit-step="0.5" data-rateit-value="{{packagingValue}}" data-rateit-resetable="false" data-rateit-starwidth="32" data-rateit-starheight="32" ></div>
+    </div>
   </div>
 
 </div>

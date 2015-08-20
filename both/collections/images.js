@@ -10,7 +10,7 @@
       bucket: "beerfest",
       maxTries: 2 ,   // optional, default 5
       transformWrite: function(fileObj, readStream, writeStream) {
-        gm(readStream, fileObj.name()).resize('400', '400').stream().pipe(writeStream);
+        gm(readStream, fileObj.name()).resize('460', '345').stream().pipe(writeStream);
       }
 
 });

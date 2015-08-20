@@ -1,29 +1,45 @@
 // Bootstrap Variables
 // @import "./lib/bootstrap/variables.import.less";
-@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700);
+// @import url(http://fonts.googleapis.com/css?family=Bree+Serif);
+// @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:700);
 // Custom Variables
 @brand-primary: #243757;
 //337ab7
-
+html.ios {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+html.ios,
+html.ios body {
+  height: initial !important;
+}
+html, body {
+  height: initial;
+}
 
 .ui.cards > .card, .ui.card {
   width: 460px;
 }
 .main.container {
-    margin-top: 5em;
+    margin-top: 3em;
+    margin-bottom: 2em;
   }
-// .panel-title{
-//   font-family: 'Bree Serif', serif;
-//   color: #fff;
-//   font-weight:400;
-//   font-size: 24px;
-// }
-// .panel-body{
-//   font-weight: normal;
-// }
-.currentRatings{
-   font-size: 18px;
+
+
+  .ui.cards > .card > .extra,
+  .ui.card > .extra {
+padding: 0.75em 0.75em;
+}
+
+.pusher{
+  min-height: 100vh;
+}
+.ui.compact.menu {
+   font-size: 16px;
+   font-weight: bold;
+   color: black;
+   margin-bottom: 0.75em;
+  //  padding-bottom: 4px;
 }
 .rateicon, .i {
   color: #016b87;

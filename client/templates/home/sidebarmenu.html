@@ -1,5 +1,5 @@
 <template name="sidebarmenu">
-  <div class="ui thin sidebar inverted vertical menu right" id="homeSidebar">
+  <!-- <div class="ui thin sidebar inverted vertical menu right" id="homeSidebar"> -->
     <a class="item {{ isActiveRoute regex='home' }}" href="{{ pathFor 'home' }}"><i class="fa fa-beer"></i> Home</a>
     <a class="item {{ isActiveRoute regex='total' }}" href="{{ pathFor 'total' }}"><i class="trophy icon center"></i>Total Results</a>
     <a class="item {{ isActiveRoute regex='taste' }}" href="{{ pathFor 'taste' }}"><i class="beer icon center"></i>Taste Results</a>
@@ -11,5 +11,5 @@
     {{#if currentUser}}
     <a class="item" href="#" data-action="logout"><i class="fa fa-lock"></i> Sign Out</a>
     {{/if}}
-  </div>
+  <!-- </div> -->
 </template>
