@@ -1,12 +1,13 @@
 <template name="currentRatings">
       <div class="ui compact menu currentRatings">
       <a class="item">
-        <i class="icon beer"></i> {{currentTasteRating}}
+        <i class="icon beer"></i> {{tasteRatingDisplayAverage}}
         <div class="floating ui blue label">{{tasteRatingTotal}}</div>
       </a>
       <a class="item">
-        <i class="icon eye"></i> {{currentPackagingRating}}
+        <i class="icon eye"></i> {{packagingRatingDisplayAverage}}
         <div class="floating ui blue label">{{packagingRatingTotal}}</div>
       </a>
     </div>
+{{updateCheck}}
 </template>

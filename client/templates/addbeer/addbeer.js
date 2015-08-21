@@ -73,7 +73,7 @@ Template.imageupload.events({
     FS.Utility.eachFile(event, function(file) {
       Images.insert(file, function (err, fileObj) {
         Session.set("photo", fileObj.url({brokenIsFine: true}));
-        console.log(err);
+        // console.log(err);
         // Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
       });
     });
