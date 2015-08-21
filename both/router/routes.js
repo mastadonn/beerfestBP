@@ -15,13 +15,14 @@ Router.map(function() {
 
   waitOn: function () {
     // return one handle, a function, or an array
-    return Meteor.subscribe('beers');
+    return Meteor.subscribe('beers','ratings','images');
   },
 
   action: function () {
     this.render('home');
   }
 });
+
 
       this.route('total', {
       path: '/total',
