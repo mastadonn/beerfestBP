@@ -50,6 +50,11 @@ Router.route('/admin', {
   name: 'admin',
 });
 
+Router.route('/loading', {
+  name: 'loading',
+  template: 'loading'
+});
+
 Router.plugin('ensureSignedIn', {
   only: ['addbeer']
 });
