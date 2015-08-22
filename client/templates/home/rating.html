@@ -20,3 +20,31 @@
 
 </div>
 </template>
+
+
+<template name="ratingCard">
+  <div class="ui tileRating">
+
+
+      <h3> <i class="icon beer"></i>Taste</h3>
+      <div class="rateit svg rateitTaste" id="rateitTaste" min="0" max="5" value="0" data-rateit-step="0.5" data-rateit-value="{{tasteValue}}" data-rateit-resetable="false" data-rateit-starwidth="32" data-rateit-starheight="32" ></div>
+    <!-- </div> -->
+    <!-- <div class="ui secondary segment"> -->
+      <h3><i class="icon eye"></i>Packaging</h3>
+      <div class="rateit svg rateitPackaging" id="rateitPackaging"  min="0" max="5" value="0" data-rateit-step="0.5" data-rateit-value="{{packagingValue}}" data-rateit-resetable="false" data-rateit-starwidth="32" data-rateit-starheight="32" ></div>
+     <!-- </div> -->
+     <!-- <div class="ui segment"> -->
+       <button class="ui toggle green basic labeled icon button large vote {{voted}}" id="vote">
+         <i class="check circle icon"> </i>
+         <label id="voteButton">{{vote}}</label>
+       </button>
+         <!-- </div> -->
+
+         <button class="ui red icon basic button top right floated" id="voteClose"><i class="icon remove red"></i></button>
+
+  </div>
+
+
+
+
+</template>

@@ -7,7 +7,7 @@
           <a class="item column  {{ isActiveRoute regex='total' }}" href="{{ pathFor 'total' }}"><i class="star icon center"></i></a>
           <a class="item column {{ isActiveRoute regex='taste' }}" href="{{ pathFor 'taste' }}"><i class="beer icon center"></i></a>
           <a class="item column {{ isActiveRoute regex='packaging' }}" href="{{ pathFor 'packaging' }}"><i class="eye icon center"></i></a>
-          <!-- <a class="item {{ isActiveRoute regex='insta' }}" href="{{ pathFor 'insta' }}"><i class="camera icon center"></i></a> -->
+          <!-- <a class="item column right {{ isActiveRoute regex='tile' }}" href="{{ pathFor 'tile' }}"><i class="block layout icon center"></i></a> -->
 
           {{else}}
           <div class="ui inverted compact segment buttons right menu">
@@ -24,6 +24,7 @@
 <template name="navmenubottom">
         <div class="ui large bottom attached fluid menu navmenubottom">
           <a class="item column beerfesttitle" href="{{pathFor 'home'}}"><i class="fa fa-beer"></i> Beerfest 8</a>
+          <!-- <a class="item column right {{ isActiveRoute regex='tile' }}" href="{{ pathFor 'tile' }}"><i class="block layout icon center"></i></a> -->
 
         <a class="item column  {{ isActiveRoute regex='total' }}" href="{{ pathFor 'total' }}"><i class="star icon center"></i></a>
         <a class="item column {{ isActiveRoute regex='taste' }}" href="{{ pathFor 'taste' }}"><i class="beer icon center"></i></a>

@@ -1,6 +1,6 @@
 Feedback.profiles = {
   "addbeer": {
-    sound: "/sounds/beeropen.wav",
-    vibrate: [500,50,500,50,100]
+    sound: "sounds/beeropen.mp3",
+    vibrate: [50,50,500,50,100,500]
   }
 };

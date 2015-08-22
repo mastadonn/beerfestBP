@@ -1,5 +1,4 @@
 <template name="beerCardList">
-  {{getBeerCount}}
   {{#each beers}}
   <div class="ui centered cards">
   <div class="card">
@@ -24,22 +23,81 @@
     </div>
     </div>
   </div>
-
-
-  <!-- <div class="beercard panel panel-primary bootcards-media">
-    <div class="panel-heading">
-      <h1 class="panel-title  text-center"></h1>
-    </div>
-    <div class="panel-body">
-      <p class="padding-small-horizontal"></p>
-    </div>
-        <div class="panel-heading text-center">
-          <h3 class="panel-title"><i class="fa fa-thumbs-up"></i>   Ratings  <i class="fa fa-thumbs-down"></i></h3>
-        </div>
-        <div class="panel-body">
-
-
-        </div>
-</div> -->
 {{/each}}
+</template>
+
+
+
+<template name="tile">
+  <div class="ui six doubling special cards">
+    {{#each beers}}
+    <div class="ui fluid card blurring dimmable" id="beerImg">
+
+      <!-- <div class="ui dimmer inverted">
+        <div class="content">
+          <div class="center">
+            {{#if currentUser}}
+            {{> ratingCard}}
+            {{else}}
+            {{/if}}
+          </div>
+        </div>
+      </div> -->
+      <div class="image">
+        <img src="{{image}}" alt="{{name}}" class="img-responsive"/>
+      </div>
+      <div class="content">
+        <div class="header">{{ name }}</div>
+
+        <div class="description">
+          {{description}}
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="ui">
+        <a class="item">
+          <i class="icon beer"></i> {{tasteRatingDisplayAverage}}
+        </a>
+        <a class="item">
+          <i class="icon eye"></i> {{packagingRatingDisplayAverage}}
+          <div class="floating ui blue label">{{packagingRatingTotal}}</div>
+        </a>
+      </div>
+      </div>
+  </div>
+
+{{/each}}
+</div>
+
+  <!--
+
+  <div class="ui three column grid">
+
+  {{#each beers}}
+    <div class="column">
+      <div class="ui fluid card">
+
+          <div class="image">
+            <img src="{{image}}" alt="{{name}}" class="img-responsive"/>
+          </div>
+          <div class="content">
+            <div class="header">{{ name }}</div>
+
+            <div class="description">
+              {{description}}
+            </div>
+          </div>
+          <div class="extra content">
+              {{> currentRatings}}
+
+              {{#if currentUser}}
+              {{> rating}}
+              {{else}}
+
+              {{/if}}
+          </div>
+    </div>
+  </div>
+{{/each}}
+</div> -->
 </template>

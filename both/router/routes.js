@@ -22,6 +22,21 @@ Router.map(function() {
     this.render('home');
   }
 });
+this.route('tile', {
+path: '/tile',
+// template: 'home'
+loadingTemplate: 'loading',
+
+waitOn: function () {
+// return one handle, a function, or an array
+return Meteor.subscribe('beers','ratings','images');
+},
+
+action: function () {
+this.render('tile');
+}
+});
+
 
 
       this.route('total', {
