@@ -57,23 +57,23 @@ Template.ratingCard.helpers({
       }
 });
 
-
-
-Template.rating.events({
-  'click .vote' : function (event, template) {
-    var thisUser = Meteor.userId();
-    if(!Session.get(this._id)){
-      Session.set(this._id, "voted");
-      // console.log(Session.get(this._id));
-    var userTaste = template.$('#rateitTaste').rateit('value'),
-    userPackaging = template.$('#rateitPackaging').rateit('value'),
-    beerId = this._id;
-    if (!userPackaging || !userTaste) { alert('Please rate beer before Voting'); return false;}
-    var element = $("#vote");
-    element.addClass("active");
-    Meteor.call("updateratingCard" ,beerId, userTaste ,userPackaging);
-
-    }
-    else{alert('Only one vote per user');return false;}
-}
-});
+//
+//
+// Template.rating.events({
+//   'click .vote' : function (event, template) {
+//     var thisUser = Meteor.userId();
+//     if(!Session.get(this._id)){
+//       Session.set(this._id, "voted");
+//       // console.log(Session.get(this._id));
+//     var userTaste = template.$('#rateitTaste').rateit('value'),
+//     userPackaging = template.$('#rateitPackaging').rateit('value'),
+//     beerId = this._id;
+//     if (!userPackaging || !userTaste) { alert('Please rate beer before Voting'); return false;}
+//     var element = $("#vote");
+//     element.addClass("active");
+//     Meteor.call("updateratingCard" ,beerId, userTaste ,userPackaging);
+//
+//     }
+//     else{alert('Only one vote per user');return false;}
+// }
+// });
